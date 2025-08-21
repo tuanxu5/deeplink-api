@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-
+app.use(cors());
 const store = new Map();
 
 app.get("/report-open-scheme", (req, res) => {
