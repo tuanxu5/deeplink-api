@@ -1,7 +1,11 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
+
 const port = 3000;
+
 app.use(cors());
+
 const store = new Map();
 
 app.get("/report-open-scheme", (req, res) => {
@@ -25,6 +29,10 @@ app.get("/get-open-scheme", (req, res) => {
   } else {
     res.send("0");
   }
+});
+
+app.get("/", (req, res) => {
+  res.send("Đây là trang check deep link của Tuan xu");
 });
 
 app.listen(port, () => {
